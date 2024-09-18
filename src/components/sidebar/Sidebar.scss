@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+.sidebar {
+  color: #fff;
+  background-color: #107360;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & > * {
+    cursor: pointer;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+
+    svg {
+      @media screen and (max-width: 1200px) {
+        width: 55px;
+        height: auto;
+      }
+
+      @media screen and (max-width: 900px) {
+        width: 40px;
+        height: auto;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        color: #fff;
+        margin-left: 0.7rem;
+        font-family: 'Lobster Two', cursive;
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 1.75rem;
+        }
+
+        @media screen and (max-width: 900px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    width: 70%;
+    margin-left: 30%;
+    transition: all 0.3s;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 25%;
+      width: 75%;
+    }
+
+    @media screen and (max-width: 900px) {
+      margin-left: 20%;
+      width: 80%;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: 30%;
+      width: 70%;
+    }
+
+    & > li,
+    .settings--btn {
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding: 0.3rem 0;
+      border-radius: 10px 0 0 10px;
+
+      @media only screen and (orientation: landscape) and (max-device-width: 768px) {
+        margin-bottom: 0.2rem;
+      }
+
+      @media screen and (orientation: portrait) and (max-device-width: 480px) {
+        padding: 0.3rem 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .settings--btn {
+      padding-left: 4px;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+
+      @media screen and (max-width: 1200px) {
+        width: 25px;
+      }
+    }
+  }
+
+  &.open {
+    .sidebar__menu {
+      list-style: none;
+      width: 75%;
+      margin-left: 25%;
+    }
+  }
+
+  &__btn {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 15px;
+    transition: all 0.3s;
+
+    svg {
+      @media screen and (max-width: 1200px) {
+        width: 35px;
+        height: auto;
+      }
+
+      @media screen and (max-width: 1200px) {
+        width: 25px;
+        height: auto;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+    }
+
+    .arrow {
+      transition: all 0.3s;
+    }
+
+    .arrow.open {
+      transform: rotate(-180deg);
+    }
+  }
+}

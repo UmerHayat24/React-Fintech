@@ -1,0 +1,150 @@
+.global-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h2 {
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    @media screen and (orientation: portrait) and (max-device-width: 480px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 0;
+    }
+
+    @media screen and (orientation: portrait) and (max-device-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+      align-self: center;
+      justify-content: center;
+    }
+  }
+
+  &-data {
+    display: none;
+  }
+
+  &.dark {
+    .global-info__bottom > div {
+      background-color: rgba($color: #000, $alpha: 0.25);
+
+      &:hover {
+        svg {
+          display: none;
+        }
+      }
+
+      svg path {
+        fill: #bbb;
+      }
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (orientation: portrait) and (max-device-width: 480px) {
+      flex-direction: column;
+    }
+
+    & > div {
+      cursor: pointer;
+      width: 27.5%;
+      min-height: 100px;
+      background-color: rgba($color: #fff, $alpha: 0.6);
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+      border-left: 7px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 1200px) {
+        width: 30%;
+      }
+
+      @media screen and (orientation: portrait) and (max-device-width: 480px) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      svg {
+        @media screen and (max-width: 1200px) {
+          width: 60px;
+          height: 60px;
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      svg path {
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        svg {
+          display: none;
+        }
+
+        .global-info-data {
+          display: block;
+          color: #eee;
+
+          p {
+            text-transform: uppercase;
+            margin-bottom: 7px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__incomes {
+    border-left-color: #16a085 !important;
+
+    &:hover {
+      background-color: #16a085 !important;
+    }
+  }
+
+  &__expenses {
+    border-left-color: #a43125 !important;
+
+    &:hover {
+      background-color: #a43125 !important;
+    }
+  }
+
+  &__debts {
+    border-left-color: #d8890b !important;
+
+    &:hover {
+      background-color: #d8890b !important;
+    }
+  }
+}
